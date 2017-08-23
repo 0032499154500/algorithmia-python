@@ -10,3 +10,11 @@ class DataApiError(ApiError):
     '''Error returned from the Algorithmia data API'''
     pass
 
+class AlgorithmException(ApiError):
+    '''Base algorithm error exception'''
+    def __init__(self, msg, code, request_id=None):
+        self.msg = msg
+        self.code = code
+        self.request_id = request_id
+    def __str__(self):
+        return repr(code) + repr(self.value)
