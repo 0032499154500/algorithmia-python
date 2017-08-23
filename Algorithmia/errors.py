@@ -16,5 +16,5 @@ class AlgorithmException(ApiError):
         self.msg = msg
         self.code = code
         self.request_id = request_id
-    def __str__(self):
-        return repr(self.value)
+    #def __str__(self):
+    #    return repr(self.value)
