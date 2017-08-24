@@ -30,9 +30,14 @@ class AlgoException(Exception):
     def __init__(self, error):
         self.message = error['message']
         self.stacktrace = None
+        self.code = None
+        self.request_id = None
         if 'stacktrace' in error:
             self.stacktrace = error['stacktrace']
-
+        if 'code' in error:
+            self.code = error['code']
+        if 'request_id' in error:
+            self.request_id = error['request_id']
     def __str__(self):
         return self.message
 
