@@ -32,11 +32,11 @@ class AlgorithmException(Exception):
         self.stacktrace = None
         self.code = None
         self.request_id = None
-        if 'stacktrace' in error:
+        if hasattr(error, 'stacktrace'):
             self.stacktrace = error['stacktrace']
-        if 'code' in error:
+        if hasattr(error, 'code'):
             self.code = error['code']
-        if 'request_id' in error:
+        if hasattr(error, 'request_id'):
             self.request_id = error['request_id']
     def __str__(self):
         return self.message
