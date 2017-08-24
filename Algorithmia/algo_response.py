@@ -39,7 +39,7 @@ class AlgorithmException(Exception):
         if hasattr(error, 'request_id'):
             self.request_id = error['request_id']
     def __str__(self):
-        return self.message
+        return repr(self.message)
 
 class Metadata(object):
     def __init__(self, metadata):
