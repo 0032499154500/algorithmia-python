@@ -45,6 +45,7 @@ def parse_exception(error):
     e.stacktrace = stacktrace
     return e
 
+'''
 class AlgorithmException(AlgorithmException):
     def __init__(self, error):
         self.message = error['message']
@@ -59,6 +60,7 @@ class AlgorithmException(AlgorithmException):
             self.request_id = error['request_id']
     def __str__(self):
         return repr(self.message)
+'''
 
 class Metadata(object):
     def __init__(self, metadata):
