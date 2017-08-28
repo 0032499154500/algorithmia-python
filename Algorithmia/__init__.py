@@ -1,7 +1,6 @@
 'Algorithmia API Client (python)'
 
 from Algorithmia.client import Client
-from Algorithmia.errors import AlgorithmException
 import os
 
 apiKey = None
