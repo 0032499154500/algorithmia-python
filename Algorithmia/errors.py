@@ -12,9 +12,8 @@ class DataApiError(ApiError):
 
 class AlgorithmException(ApiError):
     '''Base algorithm error exception'''
-    def __init__(self, message, code, request_id=None):
+    def __init__(self, message, code=None):
         self.message = message
         self.code = code
-        self.request_id = request_id
     def __str__(self):
         return repr(self.message)

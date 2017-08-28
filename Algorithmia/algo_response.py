@@ -37,30 +37,10 @@ def parse_exception(error):
         code = error['code']
     else:
         code = None
-    if 'request_id' in error:
-        request_id = error['request_id']
-    else:
-        request_id = None
-    e = AlgorithmException(message=message, code=code, request_id=request_id)
+    e = AlgorithmException(message=message, code=code)
     e.stacktrace = stacktrace
     return e
 
-'''
-class AlgorithmException(AlgorithmException):
-    def __init__(self, error):
-        self.message = error['message']
-        self.stacktrace = None
-        self.code = None
-        self.request_id = None
-        if 'stacktrace' in error:
-            self.stacktrace = error['stacktrace']
-        if 'code' in error:
-            self.code = error['code']
-        if 'request_id' in error:
-            self.request_id = error['request_id']
-    def __str__(self):
-        return repr(self.message)
-'''
 
 class Metadata(object):
     def __init__(self, metadata):
